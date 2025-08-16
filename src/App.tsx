@@ -1,43 +1,3 @@
-// import { Link, NavLink, Outlet, useNavigate } from 'react-router-dom'
-// import { useDispatch, useSelector } from 'react-redux'
-// import type { RootState } from './store/reducers/rootReducer'
-// import { logout } from './store/actions/walletActions'
-
-// export default function App() {
-//   const navigate = useNavigate()
-//   const dispatch = useDispatch()
-//   const phone = useSelector((s: RootState) => s.wallet.session?.phone)
-
-//   function handleLogout() {
-//     dispatch(logout())
-//     navigate('/')
-//   }
-
-//   return (
-//     <div className="min-h-screen">
-//       <header className="border-b bg-white">
-//         <div className="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
-//           <Link to="/app" className="font-semibold">💼 Wallet</Link>
-//           <nav className="flex items-center gap-4 text-sm">
-//             <NavLink to="/app" className={({isActive}) => isActive ? 'text-black' : 'text-gray-500'}>Dashboard</NavLink>
-//             <NavLink to="/app/transactions" className={({isActive}) => isActive ? 'text-black' : 'text-gray-500'}>Transactions</NavLink>
-//             <NavLink to="/app/withdraw" className={({isActive}) => isActive ? 'text-black' : 'text-gray-500'}>Withdraw</NavLink>
-//             <span className="hidden sm:inline text-gray-400">|</span>
-//             <span className="text-gray-500">{phone}</span>
-//             <button className="btn" onClick={handleLogout}>Logout</button>
-//           </nav>
-//         </div>
-//       </header>
-//       <main className="max-w-4xl mx-auto p-4">
-//         <Outlet />
-//       </main>
-//       <footer className="text-center text-xs text-gray-500 py-6">LocalStorage • Redux • Client-only demo</footer>
-//     </div>
-//   )
-// }
-
-
-
 import { Link, NavLink, Outlet, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import type { RootState } from './store/reducers/rootReducer';
@@ -47,8 +7,7 @@ import { CURRENCIES, format, convert } from './utils/currency';
 import type { Currency } from './types';
 import { addFunds, exchangeFunds } from './store/actions/walletActions';
 import { Home, List, Wallet, LogOut, X } from "lucide-react";
-// App.tsx
-// This is the main layout component that handles navigation and theme.
+
 export default function App() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -218,7 +177,6 @@ export default function App() {
     </div>
   </div>
 </div>
-
       </header>
 
       {/* Main Content Area */}
@@ -228,7 +186,7 @@ export default function App() {
 
       {/* Footer */}
       <footer className="text-center text-xs text-gray-500 py-6 border-t border-gray-700 mt-8">
-        LocalStorage • Redux • Client-only demo
+        LocalStorage • Redux • Demo
       </footer>
     </div>
   );
